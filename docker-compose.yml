@@ -1,0 +1,37 @@
+# docker-compose -f docker-compose.yml up
+version: '3.5'
+
+networks: 
+  demo_net: {}
+
+services:
+
+  pscache:
+    container_name: cache
+    image: island/pspcache:1.07
+    networks:
+    - demo_net
+    volumes:
+      - ./setup/cacheConfig.conf:/tmp/cacheConfig.conf:ro
+
+  broker:
+    container_name: broker
+    image: solace/solace-pubsub-standard:latest
+    shm_size: 2g
+    ulimits:
+      nofile:
+        soft: 2448
+        hard: 38048
+    networks:
+    - demo_net
+    ports:
+      #SEMP / PubSub+ Manager
+      - '8080:8080'
+      #SMF
+      - '33333:55555'
+      #AMQP
+      - '5672:5672'
+    environment:
+      - username_admin_globalaccesslevel=admin
+      - username_admin_password=admin
+      - system_scaling_maxconnectioncount=1000

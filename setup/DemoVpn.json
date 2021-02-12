@@ -1,0 +1,78 @@
+{
+    "msgVpns": [
+        {
+            "authenticationBasicType": "internal",
+            "enabled": true,
+            "maxMsgSpoolUsage": 1000,
+            "msgVpnName": "Demo",
+            "serviceAmqpPlainTextListenPort": 3672,
+            "serviceMqttWebSocketEnabled": false,
+            "aclProfiles": [
+                {
+                    "aclProfileName": "default",
+                    "clientConnectDefaultAction": "allow",
+                    "publishTopicDefaultAction": "allow",
+                    "subscribeShareNameDefaultAction": "allow",
+                    "subscribeTopicDefaultAction": "allow"
+                }
+            ],
+            "clientProfiles": [
+                {
+                    "allowBridgeConnectionsEnabled": true,
+                    "allowGuaranteedEndpointCreateDurability": "all",
+                    "allowGuaranteedEndpointCreateEnabled": true,
+                    "allowGuaranteedMsgReceiveEnabled": true,
+                    "allowGuaranteedMsgSendEnabled": true,
+                    "apiQueueManagementCopyFromOnCreateTemplateName": "",
+                    "apiTopicEndpointManagementCopyFromOnCreateTemplateName": "",
+                    "clientProfileName": "default",
+                    "maxSubscriptionCount": 50000
+                }
+            ],
+            "clientUsernames": [
+                {
+                    "clientUsername": "cache",
+                    "password": "password",
+                    "enabled": true
+                },
+                {
+                    "clientUsername": "web",
+                    "password": "password",
+                    "enabled": true
+                },
+                {
+                    "clientUsername": "default",
+                    "password": "password",
+                    "enabled": true
+                }
+            ],
+            "distributedCaches": [
+                {
+                    "cacheName": "DemoCache",
+                    "enabled": true,
+                    "clusters": [
+                        {
+                            "clusterName": "Cluster01",
+                            "enabled": true,
+                            "maxMemory": 2048,
+                            "maxMsgsPerTopic": 1,
+                            "msgLifetime": 600,
+                            "instances": [
+                                {
+                                    "autoStartEnabled": true,
+                                    "enabled": true,
+                                    "instanceName": "cache01"
+                                }
+                            ],
+                            "topics": [
+                                {
+                                    "topic": "fx/rt/>"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
