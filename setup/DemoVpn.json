@@ -55,7 +55,7 @@
                             "clusterName": "Cluster01",
                             "enabled": true,
                             "maxMemory": 2048,
-                            "maxMsgsPerTopic": 1,
+                            "maxMsgsPerTopic": 1000,
                             "msgLifetime": 600,
                             "instances": [
                                 {
