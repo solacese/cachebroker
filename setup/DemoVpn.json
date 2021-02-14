@@ -36,7 +36,7 @@
                     "enabled": true
                 },
                 {
-                    "clientUsername": "web",
+                    "clientUsername": "fx",
                     "password": "password",
                     "enabled": true
                 },
@@ -61,7 +61,8 @@
                                 {
                                     "autoStartEnabled": true,
                                     "enabled": true,
-                                    "instanceName": "cache01"
+                                    "instanceName": "cache01",
+                                    "stopOnLostMsgEnabled": false
                                 }
                             ],
                             "topics": [

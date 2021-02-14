@@ -30,7 +30,7 @@ services:
       #SMF
       - '33333:55555'
       #AMQP
-      - '5672:5672'
+      - '3672:3672'
     environment:
       - username_admin_globalaccesslevel=admin
       - username_admin_password=admin
