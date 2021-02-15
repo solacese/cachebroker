@@ -59,7 +59,8 @@ public class CacheApplication implements CommandLineRunner {
 		cacheSession = session.createCacheSession(cacheProps);
 
 		logger.info("Listen on the cache request topic: {}", cacheProperties.getRequestTopic());
-		final Topic topic = JCSMPFactory.onlyInstance().createTopic(cacheProperties.getRequestTopic());
+		String ssTopic="#share/cacheBroker/"+cacheProperties.getRequestTopic();
+		final Topic topic = JCSMPFactory.onlyInstance().createTopic(ssTopic);
 		// listen on the cache request topic
 		session.addSubscription(topic);
 		logger.info("Connected. Awaiting requests...");

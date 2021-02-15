@@ -19,6 +19,7 @@
             "clientProfiles": [
                 {
                     "allowBridgeConnectionsEnabled": true,
+                    "allowSharedSubscriptionsEnabled": true,
                     "allowGuaranteedEndpointCreateDurability": "all",
                     "allowGuaranteedEndpointCreateEnabled": true,
                     "allowGuaranteedMsgReceiveEnabled": true,
