@@ -14,6 +14,14 @@ services:
     volumes:
       - ./setup/cacheConfig.conf:/tmp/cacheConfig.conf:ro
 
+  pscache02:
+    container_name: cache02
+    image: island/pspcache:1.07
+    networks:
+    - demo_net
+    volumes:
+      - ./setup/cacheConfig02.conf:/tmp/cacheConfig.conf:ro
+
   broker:
     container_name: broker
     image: solace/solace-pubsub-standard:latest

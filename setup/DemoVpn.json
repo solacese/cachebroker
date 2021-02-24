@@ -64,8 +64,13 @@
                                     "enabled": true,
                                     "instanceName": "cache01",
                                     "stopOnLostMsgEnabled": false
-                                }
-                            ],
+                                },
+                                {
+                                  "autoStartEnabled": true,
+                                  "enabled": true,
+                                  "instanceName": "cache02",
+                                  "stopOnLostMsgEnabled": false
+                                }                            ],
                             "topics": [
                                 {
                                     "topic": "fx/rt/>"
